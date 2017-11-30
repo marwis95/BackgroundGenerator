@@ -15,5 +15,12 @@ namespace BackgroundGenerator
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            pictureBox1.BackgroundImage = Image.FromFile("tlo.png");
+
+        }
     }
 }
