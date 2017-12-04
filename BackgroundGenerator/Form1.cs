@@ -11,7 +11,7 @@ namespace BackgroundGenerator
 {
     public partial class Form1 : Form
     {
-        public int x = 30, y = 95; 
+        public int x = 30, y = 95, fontSize = 25; 
         public Form1()
         {
             InitializeComponent();
@@ -28,11 +28,11 @@ namespace BackgroundGenerator
 
         private void writeOnImage()
         {
-            SolidBrush brush = new SolidBrush(Color.FromArgb(00,255,00));
+            SolidBrush brush = new SolidBrush(Color.FromArgb(18,71,149));
             pictureBox1.Image = Image.FromFile("tlo.png");
            // var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
             var image = new Bitmap(this.pictureBox1.Image, this.pictureBox1.Width, this.pictureBox1.Height);
-            var font = new Font("TimesNewRoman", 25, FontStyle.Bold, GraphicsUnit.Pixel);
+            var font = new Font("TimesNewRoman", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
             graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
             this.pictureBox1.Image = image;
@@ -99,6 +99,18 @@ namespace BackgroundGenerator
         private void button9_Click(object sender, EventArgs e)
         {
             y = y - 10;
+            writeOnImage();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            fontSize = fontSize - 1;
+            writeOnImage();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            fontSize = fontSize + 1;
             writeOnImage();
         }
 
