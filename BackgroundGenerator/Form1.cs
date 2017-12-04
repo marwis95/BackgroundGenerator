@@ -11,7 +11,8 @@ namespace BackgroundGenerator
 {
     public partial class Form1 : Form
     {
-        public int x = 30, y = 95, fontSize = 25; 
+        public int x = 30, y = 95, fontSize = 25;
+        public string path = null;
         public Form1()
         {
             InitializeComponent();
@@ -30,11 +31,17 @@ namespace BackgroundGenerator
         {
             SolidBrush brush = new SolidBrush(Color.FromArgb(18,71,149));
             pictureBox1.Image = Image.FromFile("tlo.png");
-           // var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
             var image = new Bitmap(this.pictureBox1.Image, this.pictureBox1.Width, this.pictureBox1.Height);
-            var font = new Font("TimesNewRoman", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
+            var font = new Font("Prime", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
             graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
+
+            if (path != null)
+            {
+                Bitmap image2 = new Bitmap(Image.FromFile(path));
+                graphics.DrawImage(image2, new Rectangle(50, 50, image2.Width, image2.Height));
+            }
+
             this.pictureBox1.Image = image;
             label2.Text = x.ToString();
             label4.Text = y.ToString();
@@ -112,6 +119,24 @@ namespace BackgroundGenerator
         {
             fontSize = fontSize + 1;
             writeOnImage();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Bitmaps|*bmp|jpeps|*.jpg";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                path = open.FileName;
+                MessageBox.Show(path);
+                writeOnImage();
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+ 
         }
 
 
