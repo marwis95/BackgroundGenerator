@@ -11,7 +11,7 @@ namespace BackgroundGenerator
 {
     public partial class Form1 : Form
     {
-        public int x = 0, y = 0; 
+        public int x = 30, y = 95; 
         public Form1()
         {
             InitializeComponent();
@@ -22,19 +22,22 @@ namespace BackgroundGenerator
 
             //pictureBox1.BackgroundImage = Image.FromFile("tlo.png");
             pictureBox1.Image = Image.FromFile("tlo.png");
+            writeOnImage();
 
         }
 
         private void writeOnImage()
         {
+            SolidBrush brush = new SolidBrush(Color.FromArgb(00,255,00));
             pictureBox1.Image = Image.FromFile("tlo.png");
            // var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
             var image = new Bitmap(this.pictureBox1.Image, this.pictureBox1.Width, this.pictureBox1.Height);
             var font = new Font("TimesNewRoman", 25, FontStyle.Bold, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
-            graphics.DrawString(textBox1.Text, font, Brushes.Black, new Point(x, y));
+            graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
             this.pictureBox1.Image = image;
-            
+            label2.Text = x.ToString();
+            label4.Text = y.ToString();
 
         }
 
@@ -77,7 +80,28 @@ namespace BackgroundGenerator
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            y = y + 10;
+            writeOnImage();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            y = y + 1;
+            writeOnImage();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            y = y - 1;
+            writeOnImage();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            y = y - 10;
+            writeOnImage();
+        }
+
+
     }
 }
