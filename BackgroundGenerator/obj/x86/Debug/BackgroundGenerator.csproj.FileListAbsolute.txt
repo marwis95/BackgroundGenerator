@@ -5,3 +5,4 @@ c:\users\lenovo\documents\visual studio 2010\Projects\BackgroundGenerator\Backgr
 c:\users\lenovo\documents\visual studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Debug\BackgroundGenerator.csproj.GenerateResource.Cache
 c:\users\lenovo\documents\visual studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Debug\BackgroundGenerator.exe
 c:\users\lenovo\documents\visual studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Debug\BackgroundGenerator.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Debug\BackgroundGenerator.csprojResolveAssemblyReference.cache

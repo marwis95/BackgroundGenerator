@@ -12,6 +12,7 @@ namespace BackgroundGenerator
     public partial class Form1 : Form
     {
         public int x = 30, y = 95, fontSize = 25;
+        public int PictureX, PictureY;
         public string path = null;
         public Form1()
         {
@@ -34,17 +35,21 @@ namespace BackgroundGenerator
             var image = new Bitmap(this.pictureBox1.Image, this.pictureBox1.Width, this.pictureBox1.Height);
             var font = new Font("Prime", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
-            graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
 
             if (path != null)
             {
                 Bitmap image2 = new Bitmap(Image.FromFile(path));
-                graphics.DrawImage(image2, new Rectangle(50, 50, image2.Width, image2.Height));
+                graphics.DrawImage(image2, new Rectangle(PictureX, PictureY, image2.Width, image2.Height));
             }
+
+            
+            graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
 
             this.pictureBox1.Image = image;
             label2.Text = x.ToString();
             label4.Text = y.ToString();
+            label7.Text = PictureX.ToString();
+            label9.Text = PictureY.ToString();
 
         }
 
@@ -124,20 +129,66 @@ namespace BackgroundGenerator
         private void button12_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Bitmaps|*bmp|jpeps|*.jpg";
+            open.Filter = "Png|*png|Jpg|*.jpg";
 
             if (open.ShowDialog() == DialogResult.OK)
             {
                 path = open.FileName;
-                MessageBox.Show(path);
+                PictureX = 350;
+                PictureY = 210;
                 writeOnImage();
             }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
- 
+            PictureX = PictureX - 10;
+            writeOnImage();
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            PictureX = PictureX - 1;
+            writeOnImage();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            PictureX = PictureX + 1;
+            writeOnImage();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            PictureX = PictureX + 10;
+            writeOnImage();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            PictureY = PictureY + 10;
+            writeOnImage();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            PictureY = PictureY + 1;
+            writeOnImage();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            PictureY = PictureY - 1;
+            writeOnImage();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            PictureY = PictureY - 10;
+            writeOnImage();
+        }
+
+  
 
 
     }
