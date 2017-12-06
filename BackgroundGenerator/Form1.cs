@@ -12,7 +12,7 @@ namespace BackgroundGenerator
     public partial class Form1 : Form
     {
         public int x = 30, y = 95, fontSize = 25;
-        public int PictureX, PictureY;
+        public int PictureX, PictureY, PictreWidth, PictureHeight;
         public string path = null;
         public Form1()
         {
@@ -39,7 +39,7 @@ namespace BackgroundGenerator
             if (path != null)
             {
                 Bitmap image2 = new Bitmap(Image.FromFile(path));
-                graphics.DrawImage(image2, new Rectangle(PictureX, PictureY, image2.Width, image2.Height));
+                graphics.DrawImage(image2, new Rectangle(PictureX, PictureY, PictreWidth, PictureHeight));
             }
 
             if(radioButton1.Checked == true)
@@ -142,6 +142,9 @@ namespace BackgroundGenerator
                 path = open.FileName;
                 PictureX = 350;
                 PictureY = 210;
+                Bitmap image_tmp = new Bitmap(Image.FromFile(path));
+                PictreWidth = image_tmp.Width;
+                PictureHeight = image_tmp.Height;
                 writeOnImage();
             }
         }
@@ -211,6 +214,20 @@ namespace BackgroundGenerator
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            writeOnImage();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            PictreWidth = PictreWidth - 1;
+            PictureHeight = PictureHeight - 1;
+            writeOnImage();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            PictreWidth = PictreWidth + 1;
+            PictureHeight = PictureHeight + 1;
             writeOnImage();
         }
 
