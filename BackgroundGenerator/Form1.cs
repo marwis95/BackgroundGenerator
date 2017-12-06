@@ -42,8 +42,14 @@ namespace BackgroundGenerator
                 graphics.DrawImage(image2, new Rectangle(PictureX, PictureY, image2.Width, image2.Height));
             }
 
-            
-            graphics.DrawString(textBox1.Text, font, brush, new Point(x, y));
+            if(radioButton1.Checked == true)
+                graphics.DrawString(richTextBox1.Text, font, brush, new Point(x, y));
+
+            if (radioButton2.Checked == true)
+                graphics.DrawString(richTextBox1.Text, font, Brushes.White, new Point(x, y));
+
+            if (radioButton3.Checked == true)
+                graphics.DrawString(richTextBox1.Text, font, Brushes.Black, new Point(x, y));
 
             this.pictureBox1.Image = image;
             label2.Text = x.ToString();
@@ -185,6 +191,26 @@ namespace BackgroundGenerator
         private void button20_Click(object sender, EventArgs e)
         {
             PictureY = PictureY - 10;
+            writeOnImage();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            writeOnImage();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            writeOnImage();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            writeOnImage();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
             writeOnImage();
         }
 
