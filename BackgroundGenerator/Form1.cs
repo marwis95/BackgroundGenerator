@@ -245,6 +245,20 @@ namespace BackgroundGenerator
             writeOnImage();
         }
 
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Width = 578;
+            pictureBox1.Height = 383;
+            writeOnImage();
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Width = 690;
+            pictureBox1.Height = 496;
+            writeOnImage();
+        }
+
   
 
 
