@@ -92,7 +92,21 @@ namespace BackgroundGenerator
 
         private void button5_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image.Save("qwe.png", System.Drawing.Imaging.ImageFormat.Png); 
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Png|*png";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                path = save.FileName;
+                if (path.Contains(".png"))
+                {
+                    pictureBox1.Image.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+                }
+                else
+                {
+                    pictureBox1.Image.Save(path + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                }
+            }
 
         }
 
@@ -135,7 +149,7 @@ namespace BackgroundGenerator
         private void button12_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Png|*png|Jpg|*.jpg";
+            open.Filter = "Png|*png|Jpg|*.jpg|Bmp|*bmp";
 
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -226,8 +240,8 @@ namespace BackgroundGenerator
 
         private void button22_Click(object sender, EventArgs e)
         {
-            PictreWidth = PictreWidth + 1;
-            PictureHeight = PictureHeight + 1;
+            PictreWidth = PictreWidth + 5;
+            PictureHeight = PictureHeight + 5;
             writeOnImage();
         }
 
