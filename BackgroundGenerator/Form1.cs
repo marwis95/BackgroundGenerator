@@ -22,7 +22,14 @@ namespace BackgroundGenerator
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            //pictureBox1.BackgroundImage = Image.FromFile("tlo.png");
+
+            path = "default.jpg";
+            PictureX = 350;
+            PictureY = 210;
+            Bitmap image_tmp = new Bitmap(Image.FromFile(path));
+            PictreWidth = image_tmp.Width;
+            PictureHeight = image_tmp.Height;
+
             pictureBox1.Image = Image.FromFile("tlo.png");
             writeOnImage();
 
