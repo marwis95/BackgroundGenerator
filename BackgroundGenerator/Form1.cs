@@ -23,8 +23,8 @@ namespace BackgroundGenerator
         {
 
 
-            path = "default.jpg";
-            PictureX = 350;
+            path = "default.png";
+            PictureX = 420;
             PictureY = 210;
             Bitmap image_tmp = new Bitmap(Image.FromFile(path));
             PictreWidth = image_tmp.Width;
@@ -247,8 +247,8 @@ namespace BackgroundGenerator
 
         private void button22_Click(object sender, EventArgs e)
         {
-            PictreWidth = PictreWidth + 5;
-            PictureHeight = PictureHeight + 5;
+            PictreWidth = PictreWidth + 1;
+            PictureHeight = PictureHeight + 1;
             writeOnImage();
         }
 
