@@ -14,6 +14,7 @@ namespace BackgroundGenerator
         public int x = 30, y = 95, fontSize = 25;
         public int PictureX, PictureY, PictreWidth, PictureHeight;
         public string path = null;
+        public string path_bg = null;
         public Form1()
         {
             InitializeComponent();
@@ -24,13 +25,14 @@ namespace BackgroundGenerator
 
 
             path = "default.png";
+            path_bg = "tlo.png";
             PictureX = 420;
             PictureY = 210;
             Bitmap image_tmp = new Bitmap(Image.FromFile(path));
             PictreWidth = image_tmp.Width;
             PictureHeight = image_tmp.Height;
 
-            pictureBox1.Image = Image.FromFile("tlo.png");
+            pictureBox1.Image = Image.FromFile(path_bg);
             writeOnImage();
 
         }
@@ -38,7 +40,7 @@ namespace BackgroundGenerator
         private void writeOnImage()
         {
             SolidBrush brush = new SolidBrush(Color.FromArgb(18,71,149));
-            pictureBox1.Image = Image.FromFile("tlo.png");
+            pictureBox1.Image = Image.FromFile(path_bg);
             var image = new Bitmap(this.pictureBox1.Image, this.pictureBox1.Width, this.pictureBox1.Height);
             var font = new Font("Prime", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
@@ -264,6 +266,23 @@ namespace BackgroundGenerator
             pictureBox1.Width = 690;
             pictureBox1.Height = 496;
             writeOnImage();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_bg = new OpenFileDialog();
+            open_bg.Filter = "Png|*png|Jpg|*.jpg|Bmp|*bmp";
+
+            if (open_bg.ShowDialog() == DialogResult.OK)
+            {
+                path_bg = open_bg.FileName;
+                MessageBox.Show(path_bg);
+                pictureBox1.Image = Image.FromFile(path_bg);
+                writeOnImage();
+            }
+
+
+
         }
 
   

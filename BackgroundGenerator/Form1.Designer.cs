@@ -580,6 +580,7 @@
             this.button23.TabIndex = 32;
             this.button23.Text = "Załaduj inne tło";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // Form1
             // 
@@ -608,7 +609,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -653,6 +653,7 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
