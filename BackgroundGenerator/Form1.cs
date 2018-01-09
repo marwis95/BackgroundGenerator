@@ -32,7 +32,7 @@ namespace BackgroundGenerator
             PictreWidth = image_tmp.Width;
             PictureHeight = image_tmp.Height;
 
-            pictureBox1.Image = Image.FromFile(path_bg);
+            //pictureBox1.Image = Image.FromFile(path_bg);
             writeOnImage();
 
         }
@@ -277,7 +277,7 @@ namespace BackgroundGenerator
             {
                 path_bg = open_bg.FileName;
                 MessageBox.Show(path_bg);
-                pictureBox1.Image = Image.FromFile(path_bg);
+                //pictureBox1.Image = Image.FromFile(path_bg);
                 writeOnImage();
             }
 

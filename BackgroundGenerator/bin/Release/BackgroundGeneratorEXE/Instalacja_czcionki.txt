@@ -1,0 +1,5 @@
+Aby program BackgroundGenerator móg³ u¿ywaæ standardowej czcionki aumatic nale¿y j¹ najpierw zainstalwoaæ.
+W tym celu nale¿y przejœæ do zak³adki "Czcionki" w panelu sterowania, 
+a nastêpnie przekopiowaæ plik "Prime-Regular.ttf" do pozosta³ych czcionek systemowych
+
+W przypadku nie zainstalowania czcionki aumatic, program u¿ywa czcionki Arial

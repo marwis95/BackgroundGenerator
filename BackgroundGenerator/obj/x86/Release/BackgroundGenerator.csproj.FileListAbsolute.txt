@@ -1,0 +1,7 @@
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\bin\Release\BackgroundGenerator.exe
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\bin\Release\BackgroundGenerator.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Release\BackgroundGenerator.Form1.resources
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Release\BackgroundGenerator.Properties.Resources.resources
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Release\BackgroundGenerator.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Release\BackgroundGenerator.exe
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\BackgroundGenerator\BackgroundGenerator\obj\x86\Release\BackgroundGenerator.pdb
